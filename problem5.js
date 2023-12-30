@@ -11,16 +11,28 @@
 
 // let's do the same without the reverse() method 
 
-let myArr = [1,2,3,4];
+// let myArr = [1,2,3,4];
 
-const reverseFun = (myArr) =>{
-    debugger;
-    let newArr = []; //creating an empty array to store the reversed array items in it
-    for(i = myArr.length-1; i>=0; i--){
-        newArr.push(myArr[i]);
-    }
-    return newArr;
-}
+// const reverseFun = (myArr) =>{
+//     debugger;
+//     let newArr = []; //creating an empty array to store the reversed array items in it
+//     for(i = myArr.length-1; i>=0; i--){
+//         newArr.push(myArr[i]);
+//     }
+//     return newArr;
+// }
 
-let reversedArr = reverseFun(myArr);
-console.log(reversedArr);
+// let reversedArr = reverseFun(myArr);
+// console.log(reversedArr);
+
+// const arr = [1, 2, 3, 4, 5];
+
+// const reverseFun = (arr) =>{
+//     let emptyArr = [];
+//     for (i = arr.length - 1; i >= 0; i--) {  //i = 4 here
+//         emptyArr.push(arr[i])
+//     }
+//     return emptyArr;
+// }
+
+// console.log(reverseFun(arr));
