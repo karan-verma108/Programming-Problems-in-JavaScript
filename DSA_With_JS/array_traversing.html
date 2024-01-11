@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array traversing</title>
+    <style>
+        body {
+            background-color: lightpink;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main {
+            background-color: yellowgreen;
+            border: 1px solid black;
+            display: flex;
+            padding: 30px;
+            width: 350px;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+
+        .mainDiv {
+            display: flex;
+            gap: 20px;
+        }
+
+        .innerDiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid blue;
+            padding: 10px;
+        }
+
+        .spanDiv {
+            display: flex;
+            gap: 47px;
+            position: relative;
+            bottom: 19px;
+        }
+
+        input {
+            padding: 8px 10px;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <strong>Our array</strong>
+    <div class="main">
+        <div class="mainDiv">
+            <div class="innerDiv">4</div>
+            <div class="innerDiv">9</div>
+            <div class="innerDiv">11</div>
+            <div class="innerDiv">3</div>
+            <div class="innerDiv">22</div>
+        </div>
+        <div class="spanDiv">
+            <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+        </div>
+    </div>
+
+    <input placeholder="enter index number" type="number" name="number" id="number">
+    <button id="btn">click</button>
+
+    <p id="output"></p>
+
+    <script>
+
+        // taking the reference 
+
+
+        const printIndexNumber = (e) => {
+
+            let arr = [4,9,11,3,22];
+
+            
+            let inputValue = Number(document.getElementById('number').value);
+            let btn = document.getElementById('btn');
+            let output = document.getElementById('output');
+            console.log(arr[inputValue]);
+            
+            // console.log(inputValue);
+            if (inputValue < 0 || inputValue > 4) {
+                output.innerHTML = `You entered an invalid index number`;
+                // alert(`You entered incorrect index number, please try again`)
+            }
+            else if(arr.includes(inputValue) && inputValue >=0 || inputValue<=4) {
+                output.innerHTML = `You entered index number ${inputValue} and the value is ${arr[inputValue]}`;
+                // alert(`You entered index number ${inputValue} and the value is ${arr[inputValue]}`);
+
+            }
+            // alert(`${arr[inputValue]}`)
+        }
+
+
+        btn.addEventListener('click', printIndexNumber);
+    </script>
+</body>
+
+</html>

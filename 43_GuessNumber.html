@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number game</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+
+        #userNum{
+            width: 50%;
+            padding: 10px 0 10px 10px;
+        }
+        #btn{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the number game</h1>
+    <div class="container">
+        <input id="userNum" type="number" placeholder="Enter a number between 1 to 10">
+        <button onclick="guessNumber()" id="btn">Check result</button>
+        <p id="output"></p>
+    </div>
+
+
+    <script>
+        // getting references
+        const guessNumber = () =>{
+            let random_num = Math.round(Math.random()*10);
+            let userNum = document.getElementById('userNum').value;
+
+            let result = userNum===random_num? 'Good Work!' : 'Not matched!';
+
+            let output = document.getElementById('output');
+            output.innerHTML = `<center>${result}</center> <br> You chose ${userNum} while computer chose ${random_num}`;
+        }
+    </script>
+</body>
+</html>

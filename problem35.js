@@ -20,4 +20,4 @@ for (i = 2; count < 100; i++) {
 }
 console.log(sum);
 // console.log(count);
-console.log(i);
+console.log(i-1);

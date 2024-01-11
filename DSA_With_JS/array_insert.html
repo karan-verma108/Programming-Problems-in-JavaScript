@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array insert</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: greenyellow;
+        }
+
+        input {
+            padding: 6px 61px;
+            width: 303px;
+            text-align: center;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Insert array element</h1>
+    <div class="container">
+        <p id="output"></p>
+        <input type="number" name="number" id="index" placeholder="Enter at what index you want to add a new item">
+        <br>
+        <input type="number" name="number" id="deleteCount" placeholder="Enter how many items to be deleted"> <br>
+        <input type="number" name="number" id="insertedItem" placeholder="Enter which element to be added"> <br>
+        <button id="btn">Submit</button>
+
+    </div>
+
+    <script>
+
+        let output = document.getElementById('output');
+        let arr = [3, 6, 14, 9, 27, 1];
+        output.innerHTML = `Current array is : ${arr}`;
+
+        const insertArr = () =>{
+            let indexNumber = Number(document.getElementById('index').value);
+            let deleteCount = Number(document.getElementById('deleteCount').value);
+            let insertedItem = Number(document.getElementById('insertedItem').value);
+            let btn = document.getElementById('btn');
+
+
+            let deleteItems = arr.splice(indexNumber,deleteCount,insertedItem);
+            if(deleteCount){
+                arr[indexNumber] = deleteItems[deleteCount];
+                output.innerHTML = `The modified array is : ${arr}`;
+            } 
+            else if(deleteCount && insertedItem){
+                deleteItems[deleteCount] = insertedItem;
+                output.innerHTML = `The modified array is : ${arr}`;
+            }
+            else{
+                output.innerHTML = `The modified array is : ${arr}`;
+            }
+            
+        }
+
+        btn.addEventListener('click', insertArr);
+    </script>
+</body>
+
+</html>
