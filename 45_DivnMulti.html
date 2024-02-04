@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication and division</title>
+</head>
+
+<body>
+    <!-- Write a JavaScript program to calculate multiplication and division of two numbers (input from the user) -->
+    <h1>Calculator for multiplication and division</h1>
+    <input id="firstInp" type="number" placeholder="Enter first number">
+    <input id="secondInp" type="number" placeholder="Enter second number">
+    <button id="multi">Multiply</button>
+    <button id="divide">Divide</button>
+    <p id="output"></p>
+
+    <script>
+        const multi = document.getElementById('multi');
+        const divide = document.getElementById('divide');
+
+        const doCalc = (e) => {
+
+            let first_input = Number(document.getElementById('firstInp').value);
+            let second_input = Number(document.getElementById('secondInp').value);
+            let output = document.getElementById('output');
+
+            if (e.target.id === 'multi') {
+                let product = first_input * second_input;
+                output.innerHTML = `The multiplication of ${first_input} * ${second_input} is : ${product}`;
+            } else {
+                let division = (first_input / second_input).toFixed(2);
+                output.innerHTML = `The division of ${first_input} ÷ ${second_input} is : ${division}`;
+            }
+        }
+
+        multi.addEventListener('click', doCalc);
+        divide.addEventListener('click', doCalc);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page URL</title>
+</head>
+<body>
+    <h1>Click me to get the current page's URL</h1>
+    <button onclick="pageUrl()">click me</button>
+    <p id="output"></p>
+
+    <script>
+        const pageUrl = () =>{
+            const output = document.getElementById('output');
+            output.innerHTML = window.location.href;  //we can also write document.URL
+        }
+    </script>
+</body>
+</html>

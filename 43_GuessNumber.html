@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess the number game</title>
     <style>
-        h1{
+        h1 {
             text-align: center;
         }
 
-        .container{
+        .container {
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -18,15 +19,30 @@
             gap: 16px;
         }
 
-        #userNum{
+        #userNum {
             width: 50%;
             padding: 10px 0 10px 10px;
         }
-        #btn{
+
+        #btn {
             padding: 10px;
+        }
+
+        #output {
+            font-size: 30px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: rgb(91, 139, 20) !important;
+            text-shadow: 5px 5px 10px pink;
         }
     </style>
 </head>
+
 <body>
     <h1>Guess the number game</h1>
     <div class="container">
@@ -38,15 +54,23 @@
 
     <script>
         // getting references
-        const guessNumber = () =>{
-            let random_num = Math.round(Math.random()*10);
-            let userNum = document.getElementById('userNum').value;
+        const guessNumber = () => {
+            let random_num = Math.round(Math.random() * 3);
+            let userNum = Number(document.getElementById('userNum').value);
 
-            let result = userNum===random_num? 'Good Work!' : 'Not matched!';
+            let result = (userNum === random_num) ? 'Good Work!' : 'Not matched!';
 
+            
             let output = document.getElementById('output');
-            output.innerHTML = `<center>${result}</center> <br> You chose ${userNum} while computer chose ${random_num}`;
+            output.innerHTML = `<div class='red'>${result}</div><div> You chose ${userNum} while computer chose ${random_num}</div>`;
+
+            let redLine = document.getElementsByClassName('red')[0];
+            if (result == 'Good Work!') {
+                redLine.classList.toggle('green');
+            }
+
         }
     </script>
 </body>
+
 </html>

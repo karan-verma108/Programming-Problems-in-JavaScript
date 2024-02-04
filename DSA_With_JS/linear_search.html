@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Linear Search</h1>
+    <p id="arrayNum"></p>
+    <input type="number" placeholder="enter array numbers" id="inp" />
+    <button onclick="addToArr()">add to array</button> <br>
+    <input type="number" placeholder="enter number to be found" id="key" />
+    <button onclick="findItem()">find</button>
+    <p id="output"></p>
+
+    <script>
+
+        let emptyArr = [];
+        let arrayNum = document.getElementById('arrayNum');
+        let output = document.getElementById('output');
+        
+        const addToArr = () => {
+            let enteredNum = Number(document.getElementById('inp').value);
+            emptyArr.push(enteredNum);
+            arrayNum.innerHTML = emptyArr;
+            return emptyArr;
+        }
+        
+        const findItem = () => {
+            let found = false;
+            let key = Number(document.getElementById('key').value);
+            for (i = 0; i < emptyArr.length; i++) {
+                if (emptyArr[i] === key) {
+                    output.innerHTML = `item ${key} found at index ${i}`;
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                output.innerHTML = `item ${key} not found in the array`;
+            }
+        }
+
+
+
+        /* let arr = [2, 31, 4, 9, 0, 5];
+        // let item = 9;
+
+        const linearSearch = (arr, item) => {
+
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i] === item) {
+                    return i;
+                }
+            }
+            return -1;
+
+        }
+        let arr = [1, 21, 4, 9, 0, 5];
+        let item = 9;
+
+        let result = linearSearch(arr, item);
+
+        if (result !== -1) {
+            console.log(`item ${item} found at index ${i}`);
+        } else {
+            console.log(`item ${item} not found`);
+        }  */
+
+
+
+    </script>
+</body>
+
+</html>
