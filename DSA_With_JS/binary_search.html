@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Binary Search</h1>
+    <p id="arrayNum"></p>
+    <input type="number" placeholder="enter array numbers" id="inp" />
+    <button onclick="addToArr()">add to array</button> <br>
+    <input type="number" placeholder="enter number to be found" id="key" />
+    <button onclick="binarySearch()">find</button>
+    <p id="output"></p>
+
+
+    <script>
+
+        
+        /*as we know binary search works on the priciple of divide and conquer, which means given that we have a sorted array, we'll find the mid value first and compare the desired item to the mid value, is the desired item is greater than mid value then we search the right path else the left path*/
+
+        let emptyArr = [];
+        let arrayNum = document.getElementById('arrayNum');
+        
+        const addToArr = () =>{
+            let enteredNum = Number(document.getElementById('inp').value);
+            emptyArr.push(enteredNum);
+            arrayNum.innerHTML = emptyArr;
+            return emptyArr;
+        }
+        
+        const binarySearch = () => {
+            let found = false;
+            let item = Number(document.getElementById('key').value);
+            let low = 0;
+            let high = emptyArr.length - 1;
+            let output = document.getElementById('output');
+
+            while (low <= high) {
+                let mid = Math.floor((low + high) / 2);
+
+                if (emptyArr[mid] === item) {
+                    output.innerHTML = `item ${item} found at index ${mid}`;
+                    found = true;
+                }
+                if (item < emptyArr[mid]) {
+                    high = mid - 1;
+                    output.innerHTML = `item ${item} found at index ${mid}`;
+                } else {
+                    low = mid + 1;
+                    output.innerHTML = `item ${item} found at index ${mid}`;
+                }
+            }
+            if(!found){
+                output.innerHTML = `item ${item} not found`
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
