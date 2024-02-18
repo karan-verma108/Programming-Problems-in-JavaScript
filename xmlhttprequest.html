@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receiving data from server using XMLHttpRequest object</title>
+</head>
+
+<body>
+    <h2 id="data">this data will be changed shortly</h2>
+    <button onclick="getData()">click</button>
+
+    <script>
+
+        const getData = () => {
+            let req = new XMLHttpRequest();
+            req.open('GET', '46_PageURL.html', true);
+
+            req.onreadystatechange = function () {
+                if (req.readyState == XMLHttpRequest.DONE && req.status == 200) {
+                    document.getElementById('data').innerHTML = req.responseText;
+                    console.log(req.readyState);
+                }
+            }
+            req.send();
+        }
+
+    </script>
+
+</body>
+
+</html>
