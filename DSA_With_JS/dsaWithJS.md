@@ -14,3 +14,10 @@ Means the time of the algorithm grows as per the size of the input. So, the time
 
 Means the time taken by the algorithm to complete will remain constant irrespective of the size of the input
 
+3) O(n^2) - Quadratic time
+
+Means the time taken by the algorithm will grow in proportionate to the size of the square of the input size. Example, nested loops
+
+4) O(log n) - Logarithmic time 
+
+Means here the number so operations performed is proportional to the logarithm of the input size. Example, divide and conquor approach. The algorithm's running time increases slowly as the number of input grows
